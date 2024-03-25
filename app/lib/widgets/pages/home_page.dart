@@ -16,15 +16,17 @@ class _HomePageState extends State<HomePage> {
       mainAxisSize: MainAxisSize.min,
       children: [
         SizedBox(height: 10),
-        const Text(
-          'Atascados App',
-          style: TextStyle(fontSize: 40, fontFamily: 'Nexa'),
-        ),
+        const Text('Atascados',
+            style: TextStyle(
+                fontSize: 40,
+                fontFamily: 'Roboto',
+                letterSpacing: 0,
+                fontWeight: FontWeight.w700)),
         const Image(
           image: AssetImage('assets/images/parking.png'),
           color: Colors.blueAccent,
         ),
-        SizedBox(height: 50),
+        SizedBox(height: 10),
         Row(mainAxisSize: MainAxisSize.min, children: [
           ElevatedButton(
             onPressed: () {},
@@ -34,10 +36,15 @@ class _HomePageState extends State<HomePage> {
             child: Row(
               children: [
                 const Text('Logeate con ',
-                    style: TextStyle(color: Colors.white)),
+                    style: TextStyle(
+                        color: Colors.white,
+                        letterSpacing: 0.5,
+                        fontWeight: FontWeight.w700)),
                 const ImageIcon(
                   AssetImage('assets/images/g-icon.png'),
+                  // color: Colors.white,
                   color: Colors.white,
+                  size: 25,
                 ),
               ],
             ),
