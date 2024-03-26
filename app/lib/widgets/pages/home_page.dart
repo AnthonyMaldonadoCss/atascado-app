@@ -17,17 +17,6 @@ class _HomePageState extends State<HomePage> {
       mainAxisSize: MainAxisSize.min,
       children: [
         SizedBox(height: 10),
-        const Text('Atascados',
-            style: TextStyle(
-                fontSize: 40,
-                fontFamily: 'Roboto',
-                letterSpacing: 0,
-                fontWeight: FontWeight.w700)),
-        const Image(
-          image: AssetImage('assets/images/parking.png'),
-          color: Colors.blueAccent,
-        ),
-        SizedBox(height: 10),
         const GoogleLogin(),
       ],
     )));
