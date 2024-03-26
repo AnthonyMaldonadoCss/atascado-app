@@ -14,5 +14,5 @@ final _router = GoRouter(initialLocation: '/', routes: [
   GoRoute(
     path: '/home',
     builder: (context, state) => const HomePage(),
-  )
+  ),
 ]);

@@ -6,10 +6,10 @@ class SplashPage extends StatefulWidget {
   const SplashPage({Key? key}) : super(key: key);
 
   @override
-  _SplashPageState createState() => _SplashPageState();
+  SplashPageState createState() => SplashPageState();
 }
 
-class _SplashPageState extends State<SplashPage>
+class SplashPageState extends State<SplashPage>
     with SingleTickerProviderStateMixin {
   @override
   void initState() {

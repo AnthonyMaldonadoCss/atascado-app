@@ -4,10 +4,11 @@ class GoogleLogin extends StatefulWidget {
   const GoogleLogin({Key? key}) : super(key: key);
 
   @override
-  _GoogleLoginState createState() => _GoogleLoginState();
+  // ignore: library_private_types_in_public_api
+  GoogleLoginState createState() => GoogleLoginState();
 }
 
-class _GoogleLoginState extends State<GoogleLogin> {
+class GoogleLoginState extends State<GoogleLogin> {
   @override
   Widget build(BuildContext context) {
     return Row(mainAxisSize: MainAxisSize.min, children: [
