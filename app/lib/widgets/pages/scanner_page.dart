@@ -1,28 +1,35 @@
-import 'package:atascados/widgets/pages/scanner_page.dart';
+import 'package:atascados/widgets/components/qr_scanner.dart';
+import 'package:atascados/widgets/pages/home_page.dart';
 import 'package:flutter/material.dart';
-// import 'package:go_router/go_router.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class ScannerPage extends StatefulWidget {
+  const ScannerPage({Key? key}) : super(key: key);
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  ScannerPageState createState() => ScannerPageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class ScannerPageState extends State<ScannerPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-          constraints: const BoxConstraints.expand(),
-          decoration: BoxDecoration(
-              gradient: LinearGradient(
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                  colors: [
-                Colors.blue.shade100,
-                Colors.blue.shade500,
-              ]))),
+        constraints: const BoxConstraints.expand(),
+        decoration: BoxDecoration(
+            gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [
+              Colors.blue.shade100,
+              Colors.blue.shade500,
+            ])),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            QrScanner(),
+          ],
+        ),
+      ),
       bottomNavigationBar: BottomAppBar(
           color: Colors.transparent,
           elevation: 0,
@@ -32,7 +39,6 @@ class _HomePageState extends State<HomePage> {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 IconButton(
-                    isSelected: true,
                     onPressed: () => {
                           Navigator.of(context).push(
                             MaterialPageRoute(
@@ -41,12 +47,8 @@ class _HomePageState extends State<HomePage> {
                         },
                     icon: const Icon(Icons.home_outlined)),
                 IconButton(
-                    onPressed: () => {
-                          Navigator.of(context).push(
-                            MaterialPageRoute(
-                                builder: (context) => const ScannerPage()),
-                          )
-                        },
+                    isSelected: true,
+                    onPressed: () {},
                     icon: const Icon(Icons.qr_code_2_outlined)),
                 IconButton(
                     onPressed: () {},

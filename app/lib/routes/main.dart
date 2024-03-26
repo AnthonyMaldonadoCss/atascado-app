@@ -1,4 +1,5 @@
 import 'package:atascados/widgets/pages/home_page.dart';
+// import 'package:atascados/widgets/pages/scanner_page.dart';
 import 'package:go_router/go_router.dart';
 
 class AppRouter {
@@ -10,4 +11,8 @@ final _router = GoRouter(initialLocation: '/', routes: [
     path: '/',
     builder: (context, state) => const HomePage(),
   ),
+  // GoRoute(
+  //   path: '/scanner',
+  //   builder: (context, state) => const ScannerPage(),
+  // ),
 ]);
