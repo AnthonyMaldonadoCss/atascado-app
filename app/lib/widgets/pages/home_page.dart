@@ -1,3 +1,6 @@
+import 'package:atascados/widgets/components/shared/app_background.dart';
+import 'package:atascados/widgets/components/shared/app_bottom_bar.dart';
+import 'package:atascados/widgets/components/shared/app_bottom_item.dart';
 import 'package:atascados/widgets/pages/scanner_page.dart';
 import 'package:flutter/material.dart';
 // import 'package:go_router/go_router.dart';
@@ -15,47 +18,31 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       body: Container(
           constraints: const BoxConstraints.expand(),
-          decoration: BoxDecoration(
-              gradient: LinearGradient(
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                  colors: [
-                Colors.blue.shade100,
-                Colors.blue.shade500,
-              ]))),
-      bottomNavigationBar: BottomAppBar(
-          color: Colors.transparent,
-          elevation: 0,
-          child: SizedBox(
-            height: 60,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                IconButton(
-                    isSelected: true,
-                    onPressed: () => {
-                          Navigator.of(context).push(
-                            MaterialPageRoute(
-                                builder: (context) => const HomePage()),
-                          )
-                        },
-                    icon: const Icon(Icons.home_outlined)),
-                IconButton(
-                    onPressed: () => {
-                          Navigator.of(context).push(
-                            MaterialPageRoute(
-                                builder: (context) => const ScannerPage()),
-                          )
-                        },
-                    icon: const Icon(Icons.qr_code_2_outlined)),
-                IconButton(
-                    onPressed: () {},
-                    icon: const Icon(Icons.settings_outlined)),
-                IconButton(
-                    onPressed: () {}, icon: const Icon(Icons.logout_outlined)),
-              ],
-            ),
+          decoration: setBoxDecoration(Alignment.topLeft, Alignment.bottomRight,
+              [Colors.blue.shade100, Colors.blue.shade500]),
+          child: const Center(
+            child: Text("Home"),
           )),
+      bottomNavigationBar: setAppBottomBar([
+        AppBottomItem(
+            onPressed: () => {
+                  Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => const HomePage()))
+                },
+            icon: const Icon(Icons.home),
+            isSelected: true),
+        AppBottomItem(
+            onPressed: () => {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const ScannerPage()))
+                },
+            icon: const Icon(Icons.qr_code_2),
+            isSelected: false),
+        AppBottomItem(
+            onPressed: () {},
+            icon: const Icon(Icons.settings),
+            isSelected: false)
+      ]),
     );
   }
 }

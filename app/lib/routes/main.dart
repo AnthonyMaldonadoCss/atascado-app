@@ -11,8 +11,4 @@ final _router = GoRouter(initialLocation: '/', routes: [
     path: '/',
     builder: (context, state) => const HomePage(),
   ),
-  // GoRoute(
-  //   path: '/scanner',
-  //   builder: (context, state) => const ScannerPage(),
-  // ),
 ]);
