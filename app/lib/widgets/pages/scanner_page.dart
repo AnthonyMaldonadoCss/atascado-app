@@ -1,3 +1,4 @@
+import 'package:atascados/widgets/components/qr_scanner.dart';
 import 'package:atascados/widgets/components/shared/app_background.dart';
 import 'package:atascados/widgets/components/shared/app_bottom_bar.dart';
 import 'package:atascados/widgets/components/shared/app_bottom_item.dart';
@@ -16,12 +17,11 @@ class ScannerPageState extends State<ScannerPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-          constraints: const BoxConstraints.expand(),
-          decoration: setBoxDecoration(Alignment.topLeft, Alignment.bottomRight,
-              [Colors.blue.shade100, Colors.blue.shade500]),
-          child: const Center(
-            child: Text("Scanner"),
-          )),
+        constraints: const BoxConstraints.expand(),
+        decoration: setBoxDecoration(Alignment.topLeft, Alignment.bottomRight,
+            [Colors.blue.shade100, Colors.blue.shade500]),
+        child: QrScanner(),
+      ),
       bottomNavigationBar: setAppBottomBar([
         AppBottomItem(
             onPressed: () => {
