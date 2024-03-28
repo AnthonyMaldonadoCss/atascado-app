@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../components/menu.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -21,27 +22,8 @@ class _HomePageState extends State<HomePage> {
                 Colors.blue.shade100,
                 Colors.blue.shade500,
               ]))),
-      bottomNavigationBar: BottomAppBar(
-          color: Colors.transparent,
-          elevation: 0,
-          child: SizedBox(
-            height: 60,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                IconButton(
-                    onPressed: () {}, icon: const Icon(Icons.home_outlined)),
-                IconButton(
-                    onPressed: () {},
-                    icon: const Icon(Icons.qr_code_2_outlined)),
-                IconButton(
-                    onPressed: () {},
-                    icon: const Icon(Icons.settings_outlined)),
-                IconButton(
-                    onPressed: () {}, icon: const Icon(Icons.logout_outlined)),
-              ],
-            ),
-          )),
+      bottomNavigationBar: MenuWidget(),
     );
+   
   }
 }
