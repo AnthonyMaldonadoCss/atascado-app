@@ -43,12 +43,10 @@ app/app.*.map.json
 app/android/app/debug
 app/android/app/profile
 app/android/app/release
-app/ios
 
 # Android Studio will place build artifacts here
 app/android/app/debug
 app/android/app/profile
 app/android/app/release
-app/ios
 app/build
 app/macos/*
