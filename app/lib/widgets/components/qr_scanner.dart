@@ -54,7 +54,7 @@ class QrScannerState extends State<QrScanner> {
                 setState(() {
                   this.controller = controller;
                 });
-                await requestCameraPermission();
+                if (Platform.isIOS) await requestCameraPermission();
                 // Call resumeCamera after controller is initialized
                 controller.scannedDataStream.listen((scanData) {
                   setState(() {
