@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class AppBottomItem extends StatefulWidget {
+class AppBottomItem extends StatelessWidget {
   final Function() onPressed;
   final dynamic icon;
   final bool isSelected;
@@ -13,16 +13,11 @@ class AppBottomItem extends StatefulWidget {
       : super(key: key);
 
   @override
-  _AppBottomItemState createState() => _AppBottomItemState();
-}
-
-class _AppBottomItemState extends State<AppBottomItem> {
-  @override
   Widget build(BuildContext context) {
     return IconButton(
-      onPressed: widget.onPressed,
-      icon: widget.icon,
-      isSelected: widget.isSelected,
+      onPressed: onPressed,
+      icon: icon,
+      isSelected: isSelected,
     );
   }
 }
