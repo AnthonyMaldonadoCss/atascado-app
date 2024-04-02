@@ -12,4 +12,4 @@ COPY .env.development .
 
 EXPOSE 3000
 
-CMD npm run start:dev
+CMD yarn start:dev

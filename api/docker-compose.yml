@@ -1,5 +1,4 @@
 version: '3'
-
 services:
   backend: 
     image: 'atascados-api'
@@ -13,16 +12,14 @@ services:
     env_file:
       - .env.development
     volumes:
-      - ./:/app
+      - ./:/usr/src/app
     networks:
-      - atascados-network
-  db:
+      atascados-network:
+  mongo:
     image: 'mongo:latest'
     container_name: 'atascados-db'
     restart: always
-    platform: linux/x86_64
-    environment: 
-      - ME_CONFIG_MONGODB_URL=${CONNECTION_STRING}
+    platform: linux/amd64
     ports:
       - 27017:27017
     expose:
@@ -30,17 +27,12 @@ services:
     volumes:
       - db:/data/db
     networks:
-      atascados-network: 
-        ipv4_address: 244.178.44.111
-    
-# # Names our volume
-volumes:
-  db:
-    driver: local
+      atascados-network:
 
 networks:
   atascados-network:
     driver: bridge
-    ipam:
-      config:
-        - subnet: 244.178.5.0/16
+
+volumes:
+  db:
+    driver: local
