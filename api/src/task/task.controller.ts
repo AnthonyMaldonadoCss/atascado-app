@@ -15,8 +15,10 @@ import { TaskService } from './task.service';
 import { CreateTaskDto } from 'src/dto/create-task-dto';
 import { UpdateTaskDto } from 'src/dto/update-task-dto';
 import generateUniqueid from 'src/utils/helpers';
+import { ApiTags } from '@nestjs/swagger';
 
-@Controller('task')
+@ApiTags('Tasks')
+@Controller('tasks')
 export class TaskController {
   constructor(private taskService: TaskService) {}
 
